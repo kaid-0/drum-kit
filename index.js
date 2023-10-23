@@ -10,18 +10,18 @@ function buttonAnimation(val) {
 
 for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 	document.querySelectorAll(".drum")[i].addEventListener("click", function() {
-	checkKey(this.innerHTML);
+	playSound(this.innerHTML);
 	buttonAnimation(this.innerHTML);
 	});
 }
 
 document.addEventListener("keydown", function (e) {
-	checkKey(e.key);
+	playSound(e.key);
 	buttonAnimation(e.key);
 });
 
 
-function checkKey(val) {
+function playSound(val) {
 	switch (val) {
 		case "w":
 			new Audio('sounds/tom-1.mp3').play();
